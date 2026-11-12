@@ -2,7 +2,7 @@
 window.OA = {
   whatsapp: "5535920059158",
   planos: {
-    essencial: "",
-    regiao: "",
+    essencial: "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=42831db895d54301a280703fc60432ad",
+    regiao: "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=d5e23ede10aa4361b4563492eba5dfe1",
   },
 };
