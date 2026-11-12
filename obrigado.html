@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assinatura feita · Obra Assinada</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="img/icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav"><a class="marca" href="./"><span class="marca__selo" aria-hidden="true">✓</span>Obra Assinada</a></header>
+<main class="pagina">
+  <h1>Pronto, assinatura feita. ✓</h1>
+  <p>Falta só um passo: diga pra gente <b>o produto</b> e <b>o estado</b> da sua lista. A primeira chega nesta semana.</p>
+  <p><a class="pilula pilula--acento pilula--g" id="zap" href="#">Mandar produto e estado no WhatsApp</a></p>
+  <p class="rotulo">Se o pagamento ainda estiver em análise, o Mercado Pago te avisa por e-mail quando aprovar.</p>
+</main>
+<script src="config.js"></script>
+<script>
+  const q = new URLSearchParams(location.search);
+  const id = q.get("preapproval_id") || "";
+  const msg = "Oi! Acabei de assinar a Obra Assinada" + (id ? " (assinatura " + id + ")" : "") +
+    ". Produto: ___ / Estado: ___ / Empresa: ___";
+  document.getElementById("zap").href = "https://wa.me/" + window.OA.whatsapp + "?text=" + encodeURIComponent(msg);
+</script>
+</body>
+</html>
