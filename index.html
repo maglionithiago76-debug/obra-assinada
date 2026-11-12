@@ -37,7 +37,7 @@
     <span class="linha">o contrato hoje.</span>
     <span class="linha linha--acento">Amanhã ela compra.</span>
   </h1>
-  <p class="hero__sub">Toda segunda-feira você recebe as obras públicas que acabaram de ser contratadas no seu estado: quem ganhou, o que a obra vai consumir, o telefone da construtora e o link do contrato.</p>
+  <p class="hero__sub">Toda segunda-feira você recebe as obras novas do seu estado que vão comprar o que a sua fábrica faz: as públicas que acabaram de assinar contrato (construtora, telefone e link oficial) e as privadas que saíram nas notícias. Só 1 fábrica por produto em cada estado.</p>
   <div class="hero__acoes">
     <a class="pilula pilula--acento pilula--g" data-wa="Oi! Quero a amostra grátis do meu estado." href="#">Quero a amostra grátis</a>
     <a class="pilula pilula--linha pilula--g" href="#planos">Ver planos</a>
@@ -92,7 +92,7 @@
   <h2 class="secao__titulo" id="como-titulo">Como funciona</h2>
   <ol class="passos">
     <li><b>Você escolhe o produto e o estado.</b><span>Bloco em SC, tubo no PR, asfalto em MG… o que a sua fábrica vende e onde ela entrega.</span></li>
-    <li><b>Toda segunda chega a lista.</b><span>No WhatsApp, com a planilha: construtora, cidade, valor, o que a obra vai consumir, telefone e o link oficial do contrato.</span></li>
+    <li><b>Toda segunda chega a lista.</b><span>No WhatsApp, com a planilha: obras públicas (construtora, valor, o que vai consumir, telefone e link do contrato) e obras privadas das notícias (empresa responsável e link). Só entra o que compra o seu produto.</span></li>
     <li><b>O seu vendedor liga primeiro.</b><span>Quem ganhou a obra ainda está fechando fornecedor. É a hora de oferecer.</span></li>
   </ol>
 </section>
@@ -111,40 +111,50 @@
 <!-- 6 · Planos -->
 <section class="planos" id="planos" aria-labelledby="planos-titulo">
   <h2 class="secao__titulo" id="planos-titulo">Planos</h2>
-  <p class="planos__sub">Comece pela amostra grátis do seu estado. Se servir, assine. Cancela quando quiser, sem multa.</p>
+  <p class="planos__sub">Comece pela amostra grátis do seu estado. Depois, 7 dias grátis recebendo a lista nova. Só 1 fábrica por produto em cada estado: quem assina primeiro fica com a vaga.</p>
   <div class="cartoes">
     <article class="cartao">
       <h3>Essencial</h3>
-      <p class="preco"><b>R$ 797</b>/mês</p>
+      <p class="preco"><b>R$ 797</b>/mês</p><p class="preco__semana">menos de R$ 200 por semana · 7 dias grátis</p>
       <ul>
-        <li>1 produto em 1 estado</li>
+        <li>1 produto em 1 estado, com exclusividade</li>
         <li>Lista toda segunda no WhatsApp</li>
         <li>Planilha com telefone e link do contrato</li>
       </ul>
-      <a class="pilula pilula--acento pilula--g" data-plano="essencial" href="#">Assinar no cartão</a>
+      <a class="pilula pilula--acento pilula--g" data-plano="essencial" href="#">Testar 7 dias grátis</a>
     </article>
     <article class="cartao cartao--destaque">
       <h3>Região</h3>
-      <p class="preco"><b>R$ 1.497</b>/mês</p>
+      <p class="preco"><b>R$ 1.497</b>/mês</p><p class="preco__semana">7 dias grátis</p>
       <ul>
-        <li>Até 3 produtos ou 3 estados</li>
+        <li>Até 3 produtos ou 3 estados, com exclusividade</li>
         <li>Lista toda segunda no WhatsApp</li>
         <li>Planilha com telefone e link do contrato</li>
       </ul>
-      <a class="pilula pilula--acento pilula--g" data-plano="regiao" href="#">Assinar no cartão</a>
+      <a class="pilula pilula--acento pilula--g" data-plano="regiao" href="#">Testar 7 dias grátis</a>
     </article>
   </div>
-  <p class="rotulo planos__nota">Pagamento seguro pelo Mercado Pago, cobrado todo mês no cartão. Prefere Pix ou boleto? <a data-wa="Oi! Quero assinar a Obra Assinada pagando no Pix." href="#">Chama no WhatsApp</a>.</p>
+  <p class="rotulo planos__nota">Pagamento seguro pelo Mercado Pago. O cartão só é cobrado depois dos 7 dias grátis; cancelando antes, não paga nada. Depois, cobrança mensal. Prefere Pix ou boleto? <a data-wa="Oi! Quero assinar a Obra Assinada pagando no Pix." href="#">Chama no WhatsApp</a>.</p>
+</section>
+
+<!-- 6b · Vagas (real status, from vagas.js) -->
+<section class="vagas" id="vagas" aria-labelledby="vagas-titulo">
+  <h2 class="secao__titulo" id="vagas-titulo">Vagas por estado</h2>
+  <p class="planos__sub">Uma fábrica por produto em cada estado. Este quadro mostra a situação real e muda sozinho a cada assinatura.</p>
+  <div class="vagas__grade" id="vagas-grade"></div>
+  <p class="rotulo" id="vagas-data"></p>
 </section>
 
 <!-- 7 · Perguntas -->
 <section class="faq" aria-labelledby="faq-titulo">
   <h2 class="secao__titulo" id="faq-titulo">Perguntas</h2>
-  <details><summary>De onde vêm as obras?</summary><p>Do PNCP, o Portal Nacional de Contratações Públicas, onde prefeituras, estados e órgãos federais publicam por lei os contratos assinados. Toda obra da lista tem o link do contrato oficial.</p></details>
+  <details><summary>De onde vêm as obras?</summary><p>As públicas vêm do PNCP, o Portal Nacional de Contratações Públicas, onde prefeituras, estados e órgãos federais publicam por lei os contratos assinados. As privadas vêm de notícias da semana (loteamentos, condomínios, galpões, hotéis…). Toda obra tem o link de onde saiu.</p></details>
+  <details><summary>Quantas obras vêm por semana?</summary><p>Depende do estado e do produto, e muda de semana para semana. Nas últimas semanas, para bloco e paver, SC teve em média 9 obras públicas por semana, RS 7, MG 4, PR 3 e SP 2, mais as privadas das notícias. A amostra grátis mostra o volume real do seu estado antes de você pagar.</p></details>
+  <details><summary>O que é a exclusividade?</summary><p>Cada produto em cada estado tem uma fábrica só. Se você fica com bloco em SC, nenhuma outra fábrica recebe a lista de bloco de SC enquanto você for assinante (inclusive durante os 7 dias grátis).</p></details>
   <details><summary>Vocês garantem que eu vou vender?</summary><p>Não. A gente garante que a obra existe, foi contratada e que o link prova isso. Fechar a venda é com o seu time.</p></details>
   <details><summary>E se numa semana não tiver obra no meu estado?</summary><p>A gente avisa do mesmo jeito. Por isso a amostra grátis vem antes: você vê o volume real do seu estado antes de pagar qualquer coisa.</p></details>
-  <details><summary>Como cancelo?</summary><p>Manda "cancelar" no WhatsApp ou cancela direto no Mercado Pago. A próxima cobrança não acontece. Nos primeiros 7 dias você pode pedir o dinheiro de volta (Código de Defesa do Consumidor).</p></details>
-  <details><summary>Depois de assinar, o que acontece?</summary><p>Você cai numa página que abre o nosso WhatsApp. Diz o produto e o estado, e a primeira lista chega na mesma semana.</p></details>
+  <details><summary>Como funcionam os 7 dias grátis e o cancelamento?</summary><p>Você cadastra o cartão no Mercado Pago e recebe a lista nova da semana. A primeira cobrança só acontece no 8º dia; cancelando antes, não paga nada. Depois, cancela quando quiser: manda "cancelar" no WhatsApp ou cancela no Mercado Pago. Nos 7 dias depois da primeira cobrança você ainda pode pedir o dinheiro de volta (Código de Defesa do Consumidor).</p></details>
+  <details><summary>Depois de cadastrar o cartão, o que acontece?</summary><p>Você cai numa página que abre o nosso WhatsApp. Diz o produto e o estado: a vaga fica reservada pra você e a lista chega na segunda.</p></details>
 </section>
 
 <!-- 8 · Fim -->
@@ -162,6 +172,7 @@
 </footer>
 
 <script src="config.js"></script>
+<script src="vagas.js"></script>
 <script src="vendor/gsap.min.js"></script>
 <script src="vendor/ScrollTrigger.min.js"></script>
 <script src="vendor/lenis.min.js"></script>

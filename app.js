@@ -15,6 +15,24 @@
     a.rel = "noopener";
   });
 
+  // real slot scoreboard (vagas.js is generated from the subscriptions, never by hand)
+  const V = window.OA_VAGAS, grade = document.getElementById("vagas-grade");
+  if (V && grade) {
+    const nomes = { concreto: "Bloco, paver e tubo", asfalto: "Asfalto e brita", tubos: "Tubos e conexões",
+                    predial: "Material de construção", eletrica: "Material elétrico" };
+    const txt = { aberto: "aberta", teste: "em teste", fechado: "fechada" };
+    const ufs = [...new Set(V.vagas.map((v) => v.uf))];
+    let h = '<span class="vg-cab vg-prod">Produto</span>' + ufs.map((u) => `<span class="vg-cab">${u}</span>`).join("");
+    for (const p of Object.keys(nomes)) {
+      h += `<span class="vg-prod">${nomes[p]}</span>` + ufs.map((u) => {
+        const st = (V.vagas.find((v) => v.p === p && v.uf === u) || {}).st || "aberto";
+        return `<span class="vg-${st}" title="${txt[st]}">${txt[st]}</span>`;
+      }).join("");
+    }
+    grade.innerHTML = h;
+    document.getElementById("vagas-data").textContent = "Atualizado em " + V.atualizado + ".";
+  }
+
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const fmt = (n, dec) => n.toLocaleString("pt-BR", { minimumFractionDigits: dec, maximumFractionDigits: dec });
 
@@ -55,7 +73,7 @@
     .to({}, { duration: 0.6 });
 
   // reveal sections
-  gsap.utils.toArray(".secao__titulo, .passos li, .tabela, .cartao, .faq details, .fim__titulo").forEach((el) =>
+  gsap.utils.toArray(".secao__titulo, .passos li, .tabela, .cartao, .vagas__grade, .faq details, .fim__titulo").forEach((el) =>
     gsap.from(el, { y: 40, opacity: 0, duration: 0.8, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 88%" } }));
 
   counters.forEach((el) => {
