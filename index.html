@@ -118,7 +118,7 @@
       <p class="preco"><b>R$ 797</b>/mês</p><p class="preco__semana">menos de R$ 200 por semana · 7 dias grátis</p>
       <ul>
         <li>1 produto em 1 estado, com exclusividade</li>
-        <li>De 10 a 45 obras públicas por mês, conforme o estado, + privadas</li>
+        <li id="vol-essencial">Obras públicas e privadas do seu estado, toda semana</li>
         <li>Lista toda segunda no WhatsApp</li>
         <li>Planilha com telefone e link do contrato</li>
       </ul>
@@ -129,7 +129,7 @@
       <p class="preco"><b>R$ 1.497</b>/mês</p><p class="preco__semana">7 dias grátis</p>
       <ul>
         <li>Até 3 produtos ou 3 estados, com exclusividade</li>
-        <li>Ex.: bloco em SC + RS + PR ≈ 90 obras públicas por mês, + privadas</li>
+        <li id="vol-regiao">Junta estados vizinhos onde o volume é menor</li>
         <li>Lista toda segunda no WhatsApp</li>
         <li>Planilha com telefone e link do contrato</li>
       </ul>
@@ -151,7 +151,7 @@
 <section class="faq" aria-labelledby="faq-titulo">
   <h2 class="secao__titulo" id="faq-titulo">Perguntas</h2>
   <details><summary>De onde vêm as obras?</summary><p>As públicas vêm do PNCP, o Portal Nacional de Contratações Públicas, onde prefeituras, estados e órgãos federais publicam por lei os contratos assinados. As privadas vêm de notícias da semana (loteamentos, condomínios, galpões, hotéis…). Toda obra tem o link de onde saiu.</p></details>
-  <details><summary>Quantas obras vêm por mês?</summary><p>Depende do estado e do produto, e muda de semana para semana. No último mês, para pavimentação e drenagem (bloco, paver, tubo), foram 43 obras públicas em SC, 30 no RS, 16 no PR, 16 em MG e 10 em SP; para obras de construção e reforma, 73 em SP, 42 no RS, 32 no PR, 29 em MG e 28 em SC. Somam-se as obras privadas das notícias (poucas por mês, mas grandes). A amostra grátis mostra o volume real do seu estado antes de você pagar. Onde o volume é menor, o plano Região junta estados vizinhos.</p></details>
+  <details><summary>Quantas obras vêm por mês?</summary><p id="vol-texto">Depende do estado e do produto, e muda de semana para semana. A amostra grátis mostra o volume real do seu estado antes de você pagar.</p></details>
   <details><summary>O que é a exclusividade?</summary><p>Cada produto em cada estado tem uma fábrica só. Se você fica com bloco em SC, nenhuma outra fábrica recebe a lista de bloco de SC enquanto você for assinante (inclusive durante os 7 dias grátis).</p></details>
   <details><summary>Vocês garantem que eu vou vender?</summary><p>Não. A gente garante que a obra existe, foi contratada e que o link prova isso. Fechar a venda é com o seu time.</p></details>
   <details><summary>E se numa semana não tiver obra no meu estado?</summary><p>A gente avisa do mesmo jeito. Por isso a amostra grátis vem antes: você vê o volume real do seu estado antes de pagar qualquer coisa.</p></details>
@@ -180,6 +180,7 @@
 
 <script src="config.js"></script>
 <script src="vagas.js"></script>
+<script src="volumes.js"></script>
 <script src="vendor/gsap.min.js"></script>
 <script src="vendor/ScrollTrigger.min.js"></script>
 <script src="vendor/lenis.min.js"></script>

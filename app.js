@@ -33,6 +33,22 @@
     document.getElementById("vagas-data").textContent = "Atualizado em " + V.atualizado + ".";
   }
 
+  // real monthly volumes (volumes.js is generated weekly from the PNCP data)
+  const VOL = window.OA_VOL;
+  if (VOL) {
+    const m = VOL.mes, ufs = ["SC", "RS", "PR", "SP", "MG"];
+    const row = (p) => ufs.map((u) => `${u} ${m[p + "-" + u]}`).join(", ");
+    const main = ["concreto", "asfalto", "predial"].flatMap((p) => ufs.map((u) => m[p + "-" + u]));
+    const lo = Math.min(...main), hi = Math.max(...main);
+    const reg = m["concreto-SC"] + m["concreto-RS"] + m["concreto-PR"];
+    const t = document.getElementById("vol-texto");
+    if (t) t.textContent = `Depende do estado e do produto, e muda de semana para semana. Nos últimos 30 dias (contratos a partir de R$ ${VOL.min.toLocaleString("pt-BR")}, atualizado em ${VOL.atualizado}): calçamento com bloco/paver, meio-fio e drenagem: ${row("concreto")}. Asfalto: ${row("asfalto")}. Construção e reforma: ${row("predial")}. Somam-se as obras privadas das notícias (poucas, mas grandes). A amostra grátis mostra o volume real do seu estado antes de você pagar.`;
+    const e = document.getElementById("vol-essencial");
+    if (e) e.textContent = `De ${lo} a ${hi} obras públicas por mês, conforme estado e produto, + privadas`;
+    const r = document.getElementById("vol-regiao");
+    if (r) r.textContent = `Ex.: bloco/paver em SC + RS + PR: ${reg} obras públicas no último mês, + privadas`;
+  }
+
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const fmt = (n, dec) => n.toLocaleString("pt-BR", { minimumFractionDigits: dec, maximumFractionDigits: dec });
 
