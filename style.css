@@ -41,6 +41,7 @@ a{color:inherit}
 .linha--acento{color:var(--acento)}
 .hero__sub{max-width:620px;font-size:clamp(17px,1.6vw,20px);color:var(--texto-2)}
 .hero__acoes{display:flex;flex-wrap:wrap;gap:10px}
+.hero__garantia{margin-top:-4px}
 .hero__rolar{margin-top:12px}
 
 /* scene */
@@ -123,6 +124,7 @@ a{color:inherit}
 .fim{padding:clamp(90px,14vw,200px) var(--m);display:flex;flex-direction:column;align-items:flex-start;gap:36px;background:var(--papel);color:var(--tinta)}
 .fim__titulo{font-weight:700;font-size:clamp(44px,8.5vw,128px);line-height:.95;letter-spacing:-.045em}
 .fim__titulo span{color:#c45f08}
+.fim__sub{margin-top:-14px;font-size:clamp(17px,1.6vw,20px);max-width:560px}
 .rodape{padding:48px var(--m) 56px;display:grid;gap:10px;color:var(--texto-2);font-size:14px}
 .rodape__marca{color:var(--branco);font-weight:700;font-size:22px}
 

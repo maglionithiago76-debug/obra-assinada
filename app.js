@@ -70,7 +70,7 @@
 
   // hero entrance
   gsap.from(".hero__titulo .linha", { yPercent: 60, opacity: 0, duration: 1, ease: "power3.out", stagger: 0.12 });
-  gsap.from(".hero__sub, .hero__acoes, .hero__rolar", { y: 20, opacity: 0, duration: 0.9, delay: 0.45, stagger: 0.1 });
+  gsap.from(".hero__sub, .hero__acoes, .hero__garantia, .hero__rolar", { y: 20, opacity: 0, duration: 0.9, delay: 0.45, stagger: 0.1 });
 
   // scene: lines get written, stamp hits, document turns into the WhatsApp list
   const tl = gsap.timeline({ scrollTrigger: { trigger: "#cena", start: "top top", end: "bottom bottom", scrub: 0.6 } });
